@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Kompilacja projektu Przychodni (g++)",
+            "command": "g++",
+            "args": [
+                "-g",
+                "--std=c++17",
+                "${workspaceFolder}/*.cpp",
+                "-o",
+                "${workspaceFolder}/przychodnia.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Kompiluje wszystkie pliki .cpp w folderze roboczym."
+        }
+    ]
+}

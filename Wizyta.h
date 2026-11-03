@@ -2,8 +2,9 @@
 #include <string>
 #include <vector>
 #include <memory>
-#include "Recepta.h"
 #include "SlotCzasowy.h"
+
+class Recepta; // Deklaracja zapowiadająca przerywająca pętlę zależności
 
 class Wizyta {
 private:
