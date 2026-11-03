@@ -14,18 +14,7 @@ void SystemPrzychodni::dodajLekarza(std::shared_ptr<Lekarz> l) {
 void SystemPrzychodni::umowWizyte(int id_pacjenta, int id_lekarza, std::shared_ptr<SlotCzasowy> slot) {
     std::shared_ptr<Pacjent> docelowyPacjent = nullptr;
     
-    // Wyszukanie pacjenta
-    for (auto& p : listaPacjentow) {
-        if (p->getId() == id_pacjenta) {
-            docelowyPacjent = p;
-            break;
-        }
-    }
     
-    if (!docelowyPacjent) {
-        throw std::invalid_argument("Nie znaleziono pacjenta w systemie.");
-    }
-
     // Walidacja logiki domenowej - zablokowanie zarezerwowanego slotu[cite: 3]
     if (slot->isWolny()) {
         slot->zajmij();
