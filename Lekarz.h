@@ -3,6 +3,7 @@
 #include "SlotCzasowy.h"
 #include <vector>
 #include <memory>
+#include <string>
 
 class Lekarz : public Osoba {
 private:
@@ -12,8 +13,10 @@ private:
 
 public:
     Lekarz(std::string imie, std::string nazwisko, int id, std::string pwz, std::string specjalizacja);
-    
     void wyswietlRole() const override;
+    
     void dodajSlot(std::shared_ptr<SlotCzasowy> s);
+    void usunSlot(std::shared_ptr<SlotCzasowy> s);
+    
     std::vector<std::shared_ptr<SlotCzasowy>>& getGrafik();
 };
