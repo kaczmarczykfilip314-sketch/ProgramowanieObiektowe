@@ -11,7 +11,6 @@ public:
     Osoba(std::string imie, std::string nazwisko, int id);
     virtual ~Osoba() = default;
     
-    virtual void wyswietlRole() const = 0; // Metoda czysto wirtualna (polimorfizm)
-    
+    virtual void wyswietlRole() const = 0;
     int getId() const;
 };
