@@ -1,6 +1,6 @@
 #include "Lekarz.h"
 #include <iostream>
-
+#include <algorithm> 
 Lekarz::Lekarz(std::string imie, std::string nazwisko, int id, std::string pwz, std::string specjalizacja)
     : Osoba(std::move(imie), std::move(nazwisko), id), numerPWZ(std::move(pwz)), specjalizacja(std::move(specjalizacja)) {}
 
@@ -10,4 +10,10 @@ void Lekarz::wyswietlRole() const {
 
 void Lekarz::dodajSlot(std::shared_ptr<SlotCzasowy> s) {
     grafik.push_back(s);
+}
+void Lekarz::usunSlot(std::shared_ptr<SlotCzasowy> s) {
+    grafik.erase(std::remove(grafik.begin(), grafik.end(), s), grafik.end());
+}
+std::vector<std::shared_ptr<SlotCzasowy>>& Lekarz::getGrafik() {
+    return grafik;
 }
