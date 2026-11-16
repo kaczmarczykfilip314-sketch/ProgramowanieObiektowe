@@ -4,7 +4,7 @@
 #include <memory>
 #include "SlotCzasowy.h"
 
-class Recepta; // Deklaracja zapowiadająca przerywająca pętlę zależności
+class Recepta;
 
 class Wizyta {
 private:
@@ -18,4 +18,6 @@ public:
     
     void zmienStatus(const std::string& nowyStatus);
     void dodajRecepte(std::shared_ptr<Recepta> r);
+    std::shared_ptr<SlotCzasowy> getSlot() const;
+    void wypisz() const;
 };
