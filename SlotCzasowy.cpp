@@ -8,7 +8,6 @@ bool SlotCzasowy::isWolny() const {
     return czyWolny;
 }
 
-// Logika biznesowa zarządzania dostępnością
 void SlotCzasowy::zajmij() {
     if (!czyWolny) {
         throw std::logic_error("Slot czasowy jest juz zajety.");
