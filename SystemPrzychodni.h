@@ -18,6 +18,10 @@ private:
 public:
     void umowWizyte(int id_pacjenta, int id_lekarza, std::shared_ptr<SlotCzasowy> slot);
     bool anulujWizyte(int id_pacjenta, std::shared_ptr<Wizyta> wizyta);
+    void dodajSlot(int id_lekarza, std::shared_ptr<SlotCzasowy> slot);
+    bool usunSlot(int id_lekarza, std::shared_ptr<SlotCzasowy> slot);
+    void wystawRecepte(int id_lekarza, std::shared_ptr<Wizyta> wizyta, std::shared_ptr<Recepta> r);
+    
     void dodajPacjenta(std::shared_ptr<Pacjent> p);
     void dodajLekarza(std::shared_ptr<Lekarz> l);
 };
