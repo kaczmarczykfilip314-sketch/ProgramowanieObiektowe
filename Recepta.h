@@ -1,12 +1,18 @@
 #pragma once
 #include <string>
+#include <vector>
+#include "Date.h"
+#include "PozycjaRecepty.h"
 
-class PozycjaRecepty {
+class Recepta {
 private:
-    std::string nazwaLeku;
-    std::string dawkowanie;
-    int ilosc;
+    std::string numerRecepty;
+    Date dataWystawienia;
+    std::vector<PozycjaRecepty> pozycje;
 
 public:
-    PozycjaRecepty(std::string lek, std::string dawka, int ilosc);
+    Recepta(std::string numer, Date data);
+    
+    void dodajPozycje(const PozycjaRecepty& pozycja);
+    void wypisz() const;
 };
